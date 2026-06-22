@@ -9,72 +9,89 @@ const AboutSection = () => {
           Get to know <span className="text-gradient">me</span>
         </h3>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Summary */}
-          <div className="space-y-4">
-            <p className="text-muted-foreground leading-relaxed">
-              I'm an <span className="text-foreground font-medium">AI Engineer</span> specializing in
-              Agentic AI, LLM-based systems, and scalable data solutions. I design and build multi-agent
-              workflows, RAG pipelines, and real-time AI applications using cutting-edge tools like
-              LangChain, LangGraph, and cloud-native AWS/Azure services.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              My work bridges AI research and production systems — from building voice-enabled
-              AI interviewers with real-time avatars to architecting serverless ETL pipelines
-              on AWS. I thrive on solving complex problems and shipping AI that works in the real world.
-            </p>
+        <div className="grid md:grid-cols-12 gap-12 items-center">
+          {/* Profile Image Column */}
+          <div className="md:col-span-5 flex justify-center">
+            <div className="relative group w-full max-w-[320px]">
+              {/* Glow backdrops */}
+              <div className="absolute -inset-1.5 bg-gradient-to-r from-primary to-secondary rounded-2xl blur opacity-30 group-hover:opacity-75 transition duration-500 group-hover:duration-200" />
+              <div className="relative glass-card p-2 overflow-hidden aspect-[3/4] flex items-center justify-center glow-border">
+                <img
+                  src="/profile.jpg"
+                  alt="Muhammad Abdullah"
+                  className="rounded-lg object-cover w-full h-full transition-all duration-500"
+                />
+              </div>
+            </div>
           </div>
 
-          {/* Experience, Education, Achievements */}
-          <div className="space-y-6">
-            {/* Experience */}
-            <div className="glass-card p-5 glow-border glow-border-hover transition-all duration-300">
-              <div className="flex items-start gap-4">
-                <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                  <Briefcase size={20} />
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Experience</h4>
-                  <p className="text-sm text-muted-foreground">
-                    <span className="text-foreground">AI Engineer Intern</span> — NextGen Schooling (2025)
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    <span className="text-foreground">Python Intern</span> — Cycomverse (2024)
-                  </p>
-                </div>
-              </div>
+          {/* Text and Experience Column */}
+          <div className="md:col-span-7 space-y-6">
+            <div className="space-y-4">
+              <p className="text-muted-foreground leading-relaxed">
+                I'm an <span className="text-foreground font-medium">AI Engineer</span> specializing in
+                Agentic AI, LLM-based systems, and scalable data solutions. I design and build multi-agent
+                workflows, RAG pipelines, and real-time AI applications using cutting-edge tools like
+                LangChain, LangGraph, and cloud-native AWS/Azure services.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                My work bridges AI research and production systems — from building voice-enabled
+                AI interviewers with real-time avatars to architecting serverless ETL pipelines
+                on AWS. I thrive on solving complex problems and shipping AI that works in the real world.
+              </p>
             </div>
 
-            {/* Education */}
-            <div className="glass-card p-5 glow-border glow-border-hover transition-all duration-300">
-              <div className="flex items-start gap-4">
-                <div className="p-2 rounded-lg bg-secondary/10 text-secondary">
-                  <GraduationCap size={20} />
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Education</h4>
-                  <p className="text-sm text-muted-foreground">
-                    <span className="text-foreground">Intermediate in Computer Science</span>
-                  </p>
-                  <p className="text-sm text-muted-foreground">Govt. Graduate College, Arifwala</p>
+            {/* Experience, Education, Achievements stack */}
+            <div className="space-y-4">
+              {/* Experience */}
+              <div className="glass-card p-4 glow-border glow-border-hover transition-all duration-300">
+                <div className="flex items-start gap-4">
+                  <div className="p-2 rounded-lg bg-primary/10 text-primary shrink-0">
+                    <Briefcase size={18} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1 text-sm">Experience</h4>
+                    <p className="text-xs text-muted-foreground">
+                      <span className="text-foreground font-medium">AI Engineer Intern</span> — NextGen Schooling (2025)
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      <span className="text-foreground font-medium">Python Intern</span> — Cycomverse (2024)
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Achievements */}
-            <div className="glass-card p-5 glow-border glow-border-hover transition-all duration-300">
-              <div className="flex items-start gap-4">
-                <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                  <Trophy size={20} />
+              {/* Education */}
+              <div className="glass-card p-4 glow-border glow-border-hover transition-all duration-300">
+                <div className="flex items-start gap-4">
+                  <div className="p-2 rounded-lg bg-secondary/10 text-secondary shrink-0">
+                    <GraduationCap size={18} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1 text-sm">Education</h4>
+                    <p className="text-xs text-muted-foreground">
+                      <span className="text-foreground font-medium">Intermediate in Computer Science</span>
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-0.5">Govt. Graduate College, Arifwala</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Achievements</h4>
-                  <p className="text-sm text-muted-foreground">
-                    🏆 <span className="text-foreground">Rank #8</span> — National AI Wrapper Competition (Top 10%)
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    🚀 National Agentic AI Hackathon Participant
-                  </p>
+              </div>
+
+              {/* Achievements */}
+              <div className="glass-card p-4 glow-border glow-border-hover transition-all duration-300">
+                <div className="flex items-start gap-4">
+                  <div className="p-2 rounded-lg bg-primary/10 text-primary shrink-0">
+                    <Trophy size={18} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1 text-sm">Achievements</h4>
+                    <p className="text-xs text-muted-foreground">
+                      🏆 <span className="text-foreground font-medium">Rank #8</span> — National AI Wrapper Competition (Top 10%)
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      🚀 National Agentic AI Hackathon Participant
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

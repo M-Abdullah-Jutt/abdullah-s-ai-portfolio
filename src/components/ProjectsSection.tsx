@@ -1,45 +1,16 @@
+import { useState, useEffect } from "react";
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const projects = [
-  {
-    title: "Agentic AI Interviewer",
-    description:
-      "Real-time AI-powered mock interviewer with voice interaction, live avatar rendering using LiveKit, LangChain, and WebRTC. Conducts dynamic interviews with follow-up questions.",
-    tech: ["LangChain", "LiveKit", "WebRTC", "FastAPI", "Python"],
-    github: "https://github.com/M-Abdullah-Jutt",
-  },
-  {
-    title: "Forex Data Pipeline",
-    description:
-      "Automated serverless ETL pipeline on AWS. Ingests live forex data using Lambda & EventBridge, stores in S3, transforms and loads into Redshift for analytics.",
-    tech: ["AWS Lambda", "EventBridge", "S3", "Redshift", "Python"],
-    github: "https://github.com/M-Abdullah-Jutt",
-  },
-  {
-    title: "Travel Planner Agent",
-    description:
-      "Multi-agent travel planning system built with Google ADK. Coordinates flight search, hotel booking, and itinerary generation agents for end-to-end trip planning.",
-    tech: ["Google ADK", "Multi-Agent", "Python", "LLM APIs"],
-    github: "https://github.com/M-Abdullah-Jutt",
-  },
-  {
-    title: "Pakistan Constitution AI Assistant",
-    description:
-      "RAG-based chatbot that answers legal questions from Pakistan's Constitution. Uses vector embeddings, semantic search, and GPT-4o-mini for accurate responses.",
-    tech: ["RAG", "GPT-4o-mini", "Vector DB", "LangChain", "Streamlit"],
-    github: "https://github.com/M-Abdullah-Jutt",
-  },
-  {
-    title: "LinkedIn Post Automation",
-    description:
-      "Agentic workflow that automates LinkedIn content creation. Reduced manual effort by 80% through intelligent content generation and scheduling pipelines.",
-    tech: ["n8n", "LLM APIs", "Automation", "Python"],
-    github: "https://github.com/M-Abdullah-Jutt",
-  },
-];
+import { getProjects, subscribeToDBChanges } from "@/lib/store";
 
 const ProjectsSection = () => {
+  const [projects, setProjects] = useState(getProjects());
+
+  useEffect(() => {
+    return subscribeToDBChanges(() => {
+      setProjects(getProjects());
+    });
+  }, []);
   return (
     <section id="projects" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { addContactMessage } from "@/lib/store";
 
 const ContactSection = () => {
   const [name, setName] = useState("");
@@ -17,6 +18,10 @@ const ContactSection = () => {
       toast({ title: "Please fill in all fields", variant: "destructive" });
       return;
     }
+    
+    // Save to local DB store
+    addContactMessage(name, email, message);
+    
     toast({ title: "Message sent!", description: "Thanks for reaching out. I'll get back to you soon." });
     setName("");
     setEmail("");
