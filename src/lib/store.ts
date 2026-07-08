@@ -85,6 +85,13 @@ const initialProjects: Project[] = [
     tech: ["n8n", "LLM APIs", "Automation", "Python"],
     github: "https://github.com/M-Abdullah-Jutt",
   },
+  {
+    id: "p6",
+    title: "Student Performance Prediction",
+    description: "An end-to-end Machine Learning pipeline designed to predict student academic performance based on demographic and educational factors, enabling early interventions.",
+    tech: ["Python", "Scikit-Learn", "Pandas", "Flask", "Machine Learning"],
+    github: "https://github.com/M-Abdullah-Jutt/Student-Performance-Prediction",
+  },
 ];
 
 const initialBlogPosts: BlogPost[] = [
