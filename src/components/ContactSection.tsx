@@ -18,10 +18,10 @@ const ContactSection = () => {
       toast({ title: "Please fill in all fields", variant: "destructive" });
       return;
     }
-    
+
     // Save to local DB store
     addContactMessage(name, email, message);
-    
+
     toast({ title: "Message sent!", description: "Thanks for reaching out. I'll get back to you soon." });
     setName("");
     setEmail("");
@@ -45,13 +45,13 @@ const ContactSection = () => {
 
             <div className="space-y-4">
               <a
-                href="mailto:abdullahjut255@gmail.com"
+                href="mailto:m.abdullah65940@gmail.com"
                 className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
               >
                 <div className="p-2 rounded-lg bg-primary/10 text-primary">
                   <Mail size={18} />
                 </div>
-                <span className="text-sm">abdullahjut255@gmail.com</span>
+                <span className="text-sm">m.abdullah65940@gmail.com</span>
               </a>
               <a
                 href="https://github.com/M-Abdullah-Jutt"

@@ -627,7 +627,7 @@ const AdminDashboard = () => {
                   <label className="text-xs text-muted-foreground font-mono-accent">Tech Stack (comma separated)</label>
                   <Input 
                     value={Array.isArray(currentProject.tech) ? currentProject.tech.join(", ") : currentProject.tech || ""} 
-                    onChange={(e) => setCurrentProject({ ...currentProject, tech: e.target.value })} 
+                    onChange={(e) => setCurrentProject({ ...currentProject, tech: e.target.value as any })} 
                     className="bg-muted/10 border-border/80 text-sm focus:border-primary/50"
                     placeholder="e.g. Python, LangChain, React"
                   />
@@ -739,7 +739,7 @@ const AdminDashboard = () => {
                 <label className="text-xs text-muted-foreground font-mono-accent">Tags (comma separated)</label>
                 <Input 
                   value={Array.isArray(currentBlog.tags) ? currentBlog.tags.join(", ") : currentBlog.tags || ""} 
-                  onChange={(e) => setCurrentBlog({ ...currentBlog, tags: e.target.value })} 
+                  onChange={(e) => setCurrentBlog({ ...currentBlog, tags: e.target.value as any })} 
                   className="bg-muted/10 border-border/80 text-sm focus:border-primary/50"
                   placeholder="e.g. ReAct, Agents, LangChain"
                 />
